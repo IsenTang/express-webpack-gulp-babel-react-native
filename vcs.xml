@@ -10,6 +10,10 @@
           <option name="url" value="https://github.com/tyc920120/express-webpack-babel-react" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/tyc920120/express-webpack-gulp-babel-react" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="F:\myProject\express-webpack-babel-react" />
