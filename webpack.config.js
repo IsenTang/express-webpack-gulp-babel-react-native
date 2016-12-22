@@ -26,15 +26,12 @@ var devConfig = {
                 test: /\.css$/,
                 loader: "style!css"
             },{
-                test: /\.js|jsx$/,
+                test: /\.jsx$/,
                 loader: 'babel',
                 query: {
                     presets: ['react', 'es2015']
                 }
-            },{
-                test: require.resolve('jquery'),
-                loader: 'expose?jQuery!expose?$'
-            }
+            },
         ]
     },
     plugins: [

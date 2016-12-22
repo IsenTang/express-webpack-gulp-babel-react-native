@@ -2,11 +2,5 @@
  * Created by 唐逸超 on 2016/12/15.
  */
 {
-    "presets": ["es2015"],
-    "ignore":[
-        "jquery.js",
-        "jquery.min.js",
-        "bootstrap.js",
-        "bootstrap.min.js"
-    ]
+    "presets": ["es2015"]
 }

@@ -40,9 +40,5 @@ jspm_packages
 # IDE
 .idea
 
-# Setting file
-.xml
-_windows
-codestyles
-colors
-inspection
+# Static files
+public/
