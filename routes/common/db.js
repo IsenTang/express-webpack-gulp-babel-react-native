@@ -5,7 +5,8 @@
 
 var mongoose = require('mongoose');
 var dbSetting = require('../../public/setting/db');
-var dbStr = dbSetting.db + dbSetting.host + dbSetting.port + dbSetting.dbname;
+var dbStr = dbSetting.db + '://' + dbSetting.host + ':' + dbSetting.port + '/' + dbSetting.dbname;
+console.log(dbStr);
 var db = mongoose.createConnection(dbStr);
 
 db.on('error', function (error) {

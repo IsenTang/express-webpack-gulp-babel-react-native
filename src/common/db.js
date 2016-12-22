@@ -5,7 +5,8 @@
 
 let mongoose = require('mongoose');
 let dbSetting = require('../../public/setting/db');
-let dbStr = dbSetting.db+dbSetting.host+dbSetting.port+dbSetting.dbname;
+let dbStr = dbSetting.db+'://'+dbSetting.host+':'+dbSetting.port+'/'+dbSetting.dbname;
+console.log(dbStr);
 let db = mongoose.createConnection(dbStr);
 
 db.on('error',function(error){
