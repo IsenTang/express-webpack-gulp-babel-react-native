@@ -4,7 +4,10 @@
 'use strict'
 
 let setting = {
-    db:'mongodb://127.0.0.1:27017/myDB'
+    db:'mongodb',
+    host:'127.0.0.1',
+    port:'27017',
+    dbname:'myDB'
 }
 
 module.exports = setting;
