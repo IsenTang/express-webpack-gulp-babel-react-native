@@ -7,7 +7,9 @@ let setting = {
     db:'mongodb',
     host:'127.0.0.1',
     port:'27017',
-    dbname:'myDB'
+    dbname:'myDB',
+    password:'',
+    username:''
 }
 
 module.exports = setting;
