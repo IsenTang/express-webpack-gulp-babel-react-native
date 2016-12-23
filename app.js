@@ -2,14 +2,25 @@
 var express = require('express');
 var path = require('path');
 var debug = require('debug')('envproject:server');
+var favicon = require('serve-favicon');
+var session = require('express-session');
+var cookieParser = require('cookie-parser');
+
+
 
 
 let app = express();
 var port = normalizePort(process.env.PORT || '3000');
 
+
+
+
+
 app.set('port', port);
 app.set('view engine', 'ejs');
 app.set('views', path.resolve(__dirname, './views'));
+//网站图标
+app.use(favicon(path.join(__dirname,'public','images','favicon.ico')));
 
 // local variables for all views
 app.locals.env = process.env.NODE_ENV || 'dev';
@@ -35,6 +46,16 @@ app.use(webpackDevMiddleware(compiler, {
   }
 }));
 app.use(webpackHotMiddleware(compiler));
+
+//cookieParser  做session时候，要将值加密放入cookie中，use coolieParser与session要在Router之前才起效果。
+app.use(cookieParser());
+app.use(session({
+  secret: '12345',
+  cookie: {maxAge: 80000 },  //设置maxAge是80000ms，即80s后session和相应的cookie失效过期
+  resave: true,  //是否允许session重新设置，要保证session有操作时候，必须设置这个属性为true
+  saveUninitialized: true,
+  unset:'keep'
+}));
 
 //路由
 var index = require('./routes/index');
