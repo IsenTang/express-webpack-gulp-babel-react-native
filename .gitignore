@@ -42,3 +42,8 @@ jspm_packages
 
 # Static files
 public/
+
+# Setting files
+_windows
+colors
+.xml
