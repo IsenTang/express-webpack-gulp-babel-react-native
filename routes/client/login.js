@@ -3,7 +3,7 @@
 var express = require('express');
 var router = express.Router();
 var app = express();
-var db = require('./common/db.js');
+var db = require('../common/db.js');
 var mongoose = require('mongoose');
 //在实例化 mongoose的schema的时候，要实例化在全局上。
 var userSchema = new mongoose.Schema({
