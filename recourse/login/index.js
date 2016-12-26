@@ -3,4 +3,4 @@
  */
 
 require('./style.css');
-require('./page1.jsx');
+require('./components/login.jsx');

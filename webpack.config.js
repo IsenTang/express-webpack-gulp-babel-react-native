@@ -10,7 +10,7 @@ var hotMiddlewareScript = 'webpack-hot-middleware/client?reload=true';
 
 var devConfig = {
     entry: {
-        page1: [path.resolve(__dirname, './recourse/page1'),hotMiddlewareScript],
+        page1: [path.resolve(__dirname, './recourse/login'),hotMiddlewareScript],
     },
     output: {
         filename: './[name]/bundle.js',

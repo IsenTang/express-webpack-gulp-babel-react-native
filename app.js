@@ -19,6 +19,7 @@ var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 app.set('view engine', 'ejs');
 app.set('views', path.resolve(__dirname, './views'));
+
 //网站图标
 app.use(favicon(path.join(__dirname,'public','images','favicon.ico')));
 
@@ -58,7 +59,7 @@ app.use(session({
 }));
 
 //路由
-var index = require('./routes/index');
+var index = require('./routes/client/login');
 var users = require('./routes/users');
 app.use('/', index);
 app.use('/users', users);
