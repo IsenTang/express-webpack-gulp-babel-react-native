@@ -11,7 +11,7 @@ let totalDivStyle = {
     border:'1px solid rgb(231,231,231)',
     borderImage:'none',
     width:'400px',
-    heigth:'200px',
+    height:'200px',
     textAlign:'center'
 }
 
@@ -47,7 +47,7 @@ let PasscodeInputDiv = React.createClass({
 let RegisterButton = React.createClass({
     render:function(){
         return(
-            <span style={{float:'rigth'}}>
+            <span style={{float:'right'}}>
                 <a style={{color:'rgb(204,204,204)',marginRight:'10px'}} href="#">注册</a>
             </span>
         );
@@ -81,8 +81,8 @@ let LoginButton = React.createClass({
 let buttonPStyle = {
     marginTop:'0px',
     marginRight:'35px',
-    marginLeft:'20px',
-    marginBottom:'45px'
+    marginLeft:'45px',
+    marginBottom:'20px'
 }
 
 let ForgetButton = React.createClass({
