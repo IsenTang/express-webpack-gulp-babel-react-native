@@ -47,3 +47,13 @@ public/
 _windows
 colors
 .xml
+/ignore.xml
+/colors.scheme.xml
+/ide.general.xml
+/IntelliLang.xml
+/diff.xml
+/debugger.xml
+/web-browsers.xml
+/ui.lnf.xml
+/inspection/
+!/public/

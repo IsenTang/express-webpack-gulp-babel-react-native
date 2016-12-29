@@ -6,14 +6,8 @@ var favicon = require('serve-favicon');
 var session = require('express-session');
 var cookieParser = require('cookie-parser');
 
-
-
-
 let app = express();
 var port = normalizePort(process.env.PORT || '3000');
-
-
-
 
 
 app.set('port', port);
@@ -21,7 +15,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.resolve(__dirname, './views'));
 
 //网站图标
-app.use(favicon(path.join(__dirname,'public','images','favicon.ico')));
+app.use(favicon(path.join(__dirname,'static','images','favicon.ico')));
 
 // local variables for all views
 app.locals.env = process.env.NODE_ENV || 'dev';
@@ -59,9 +53,9 @@ app.use(session({
 }));
 
 //路由
-var index = require('./routes/client/login');
+var login = require('./routes/client/login');
 var users = require('./routes/users');
-app.use('/', index);
+app.use('/', login);
 app.use('/users', users);
 
 

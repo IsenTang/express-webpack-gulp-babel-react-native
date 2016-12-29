@@ -4,7 +4,7 @@
 'use strict';
 
 var mongoose = require('mongoose');
-var dbSetting = require('../../public/setting/db');
+var dbSetting = require('../../static/setting/db');
 var dbStr = dbSetting.db + '://' + dbSetting.host + ':' + dbSetting.port + '/' + dbSetting.dbname;
 console.log(dbStr);
 var db = mongoose.createConnection(dbStr);

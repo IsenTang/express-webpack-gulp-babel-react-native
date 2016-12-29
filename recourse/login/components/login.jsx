@@ -2,26 +2,138 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+let totalDivStyle = {
+    background:'rgb(255,255,255)',
+    marginTop:'-100px',
+    marginLeft:'auto',
+    marginRight:'auto',
+    marginBottom:'auto',
+    border:'1px solid rgb(231,231,231)',
+    borderImage:'none',
+    width:'400px',
+    heigth:'200px',
+    textAlign:'center'
+}
+
+let UsernameInputDivPStyle = {
+    paddingTop:'30px',
+    paddingLeft:'0px',
+    paddingRight:'0px',
+    paddingBottom:'10px',
+    position:'relative'
+}
+let UsernameInputDiv = React.createClass({
+    render:function(){
+        return (
+            <p style={UsernameInputDivPStyle}>
+                <span className="u_logo"></span>
+                <input className="ipt" type="text" placeholder="请输入用户名或邮箱" value=""/>
+            </p>
+        )
+    }
+})
+
+let PasscodeInputDiv = React.createClass({
+    render:function(){
+        return(
+            <p style={{position:'relative'}}>
+                <span className="p_logo"></span>
+                <input className="ipt" id="password" type="password" placeholder="请输入密码" value=""/>
+            </p>
+        )
+    }
+})
+
 let RegisterButton = React.createClass({
     render:function(){
         return(
             <span style={{float:'rigth'}}>
-                <a style={{color:'rgb(204,204,204)',marginright:'10px'}} href="#">注册</a>
+                <a style={{color:'rgb(204,204,204)',marginRight:'10px'}} href="#">注册</a>
             </span>
         );
     }
 });
 
+let loginButtonStyle={
+    background:'rgb(0,142,173)',
+    paddingLeft:'10px',
+    paddingRight:'10px',
+    paddingTop:'5px',
+    paddingBottom:'5px',
+    borderRadius:'4px',
+    border:'1px solid rgb(26,117,152)',
+    borderImage:'none',
+    color:'rgb(255,255,255)',
+    fontWeight:'bold'
+};
 let LoginButton = React.createClass({
     render:function(){
         return(
-            <p>1111111111</p>
+            <span style={{float:'right'}}>
+                <RegisterButton/>
+                <a style={loginButtonStyle} href="#">登陆</a>
+            </span>
         );
     }
 });
 
 
+let buttonPStyle = {
+    marginTop:'0px',
+    marginRight:'35px',
+    marginLeft:'20px',
+    marginBottom:'45px'
+}
+
+let ForgetButton = React.createClass({
+    render:function(){
+    return(
+            <span style={{float:'left'}}>
+                <a style={{color:'rgb(204,204,204)'}} href="#">
+                    忘记密码
+                </a>
+            </span>
+    )
+    }
+});
+
+let buttonDivStyle = {
+    height:'50px',
+    lineHeight:'50px',
+    marginTop:'30px',
+    borderTopColor:'rgb(231,231,231)',
+    borderTopWidth:'1px',
+    borderTopStyle:'solid'
+}
+let ButtonDiv = React.createClass({
+    render:function(){
+        return (
+            <div style={buttonDivStyle}>
+                <p style={buttonPStyle}>
+                <ForgetButton/><LoginButton/>
+                </p>
+            </div>
+        )
+    }
+});
+
+let TotalDiv = React.createClass({
+    render:function(){
+        return(
+            <div style={totalDivStyle}>
+                <div style={{width:'165px',height:'96px',position:'absolute'}}>
+                    <div className="tou"></div>
+                    <div className="initial_left_hand" id="left_hand"></div>
+                    <div className="initial_right_hand" id="right_hand"></div>
+                </div>
+                <UsernameInputDiv/>
+                <PasscodeInputDiv/>
+                <ButtonDiv/>
+            </div>
+        )
+    }
+})
 ReactDOM.render(
-    <RegisterButton />,
+    <TotalDiv/>,
     document.getElementById('loginDiv')
 );
