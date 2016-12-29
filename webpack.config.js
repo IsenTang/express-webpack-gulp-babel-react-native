@@ -22,12 +22,12 @@ var devConfig = {
     module: {
             loaders: [{
                 test: /\.(png|jpg)$/,
-                loader: 'url?limit=8192&name=public/images/[name].bg.[ext]'
+                loader: 'url?limit=8192&name=public/images/[name].[ext]'
             }, {
                 test: /\.css$/,
                 loader: "style!css"
             },{
-                test: /\.jsx$/,
+                test: /\.js(x)$/,
                 loader: 'babel',
                 query: {
                     presets: ['react', 'es2015']

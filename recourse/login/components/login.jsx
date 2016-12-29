@@ -47,9 +47,7 @@ let PasscodeInputDiv = React.createClass({
 let RegisterButton = React.createClass({
     render:function(){
         return(
-            <span style={{float:'right'}}>
                 <a style={{color:'rgb(204,204,204)',marginRight:'10px'}} href="#">注册</a>
-            </span>
         );
     }
 });

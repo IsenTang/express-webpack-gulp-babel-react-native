@@ -32,7 +32,7 @@ router.get('/login', function(req, res, next) {
   userModel.find(function(err,users){
     console.log(users);
   });
-  res.render('login/index', { title: 'Express' });
+  res.render('login/index', { title: '登陆' });
 });
 
 
