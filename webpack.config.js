@@ -2,9 +2,9 @@ var webpack = require('webpack');
 var path = require('path');
 var fs = require('fs');
 var nodeExternals = require('webpack-node-externals');
-let extractTextWebpackPlugin = require('extract-text-webpack-plugin');
+var extractTextWebpackPlugin = require('extract-text-webpack-plugin');
 
-var publicPath = 'http://localhot:3000/';
+var publicPath = 'http://localhost:3000/';
 /**代表开启热加载模式  ？后的参数代表，不能热加载的情况就整页刷新 */
 var hotMiddlewareScript = 'webpack-hot-middleware/client?reload=true';
 
@@ -22,7 +22,7 @@ var devConfig = {
     module: {
             loaders: [{
                 test: /\.(png|jpg)$/,
-                loader: 'url?limit=8192&name=images/[name].[ext]'
+                loader: 'url?limit=8192&name=public/images/[name].bg.[ext]'
             }, {
                 test: /\.css$/,
                 loader: "style!css"
