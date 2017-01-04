@@ -38,6 +38,8 @@
     "gulp-watch": "^4.3.11",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
+    "react-redux": "^5.0.1",
+    "redux": "^3.6.0",
     "style-loader": "^0.13.1",
     "supervisor": "^0.12.0",
     "url-loader": "^0.5.7",

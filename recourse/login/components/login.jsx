@@ -23,6 +23,7 @@ let UsernameInputDivPStyle = {
     position:'relative'
 }
 let UsernameInputDiv = React.createClass({
+
     render:function(){
         return (
             <p style={UsernameInputDivPStyle}>
