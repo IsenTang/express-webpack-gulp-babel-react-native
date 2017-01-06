@@ -19,6 +19,9 @@ var devConfig = {
         publicPath: publicPath
     },
     devtool: 'source-map',
+    // resolve:{
+    //     extensions:['','js','jsx','css','png','jpg']
+    // },
     module: {
             loaders: [{
                 test: /\.(png|jpg)$/,

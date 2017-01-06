@@ -4,3 +4,4 @@
 
 require('./style.css');
 require('./components/login.jsx');
+require('./components/counter.jsx');
