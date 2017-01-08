@@ -1,4 +1,5 @@
-export default (state = 0,action) => {
+'use strict'
+export const reducer =  (state = 0,action) => {
     switch (action.type){
         case 'increment':
             return state+1
@@ -8,3 +9,5 @@ export default (state = 0,action) => {
             return state
     }
 }
+
+

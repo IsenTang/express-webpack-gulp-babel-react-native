@@ -19,18 +19,19 @@ var devConfig = {
         publicPath: publicPath
     },
     devtool: 'source-map',
-    // resolve:{
-    //     extensions:['','js','jsx','css','png','jpg']
-    // },
     module: {
             loaders: [{
                 test: /\.(png|jpg)$/,
+                exclude: /node_modules/,
                 loader: 'url?limit=8192&name=public/images/[name].[ext]'
             }, {
                 test: /\.css$/,
+                exclude: /node_modules/,
                 loader: "style!css"
             },{
-                test: /\.js(x)$/,
+                test: /\.jsx?$/,//这里需要注意，要有？，代表loader js以及jsx结尾的文件，但是要注意，这回加载node_modules中文件。
+                                //所以要有exclude。
+                exclude: /node_modules/,
                 loader: 'babel',
                 query: {
                     presets: ['react', 'es2015']
