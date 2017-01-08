@@ -31,7 +31,7 @@ router.get('/login', function (req, res, next) {
   var userModel = db.model('user', userSchema);
   var userEntity = new userModel({ name: 'Tom' });
   userModel.find(function (err, users) {
-    // console.log(users);
+    console.log(users);
   });
   res.render('login/index', { title: '登陆' });
 });

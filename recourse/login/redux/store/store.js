@@ -1,6 +1,6 @@
 'use strict'
 import { createStore } from 'redux';
-import reducer from '../reducer/reducer'
+let reducer = require('../reducer/reducer').reducer;
+
 export const store = createStore(reducer);
 
-store.subscribe();

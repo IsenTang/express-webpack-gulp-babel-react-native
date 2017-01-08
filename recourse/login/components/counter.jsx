@@ -1,17 +1,21 @@
 'use strict'
 import React from 'react';
 import ReactDOM from 'react-dom';
-import store from '../redux/store/store'
+import {store} from '../redux/store/store'
+
+let value = store.getState();
+let onIncrement = store.dispatch({type: 'increment'});
+let onDecrement = store.dispatch({type: 'decrement'})
 
 let ButtonGroup = React.createClass({
 
     propTypes : {
-        value:React.propoTypes.number.isRequired,
-        onIncrement:React.protoTypes.func.isRequired,
-        onDecrement:React.protoTypes.func.isRequired,
+        value:React.PropTypes.number.isRequired,
+        onIncrement:React.PropTypes.func.isRequired,
+        onDecrement:React.PropTypes.func.isRequired,
     },
-
     render:function(){
+        const { value, onIncrement, onDecrement } = this.props
         return(
         <div>
             <span>{value}</span>
@@ -22,13 +26,16 @@ let ButtonGroup = React.createClass({
     }
 })
 
-ReactDOM.render(
-    <ButtonGroup
-        value={store.getState()}
-        onIncrement={() => store.dispatch({type:'increment'})}
-        onDecrement={() => store.dispatcn({type:'decrement'})}/>,
-    document.getelementByid('counterDiv')
+
+
+const render = () => ReactDOM.render(
+    <ButtonGroup value={store.getState()}
+                      onIncrement={() => store.dispatch({ type: 'increment' })}
+                      onDecrement={() => store.dispatch({ type: 'decrement' })}/>,
+    document.getElementById('counterDiv')
 );
 
+render();
+store.subscribe(render);
 
 
