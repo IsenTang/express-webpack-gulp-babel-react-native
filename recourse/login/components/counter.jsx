@@ -3,9 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {store} from '../redux/store/store'
 
-let value = store.getState();
-let onIncrement = store.dispatch({type: 'increment'});
-let onDecrement = store.dispatch({type: 'decrement'})
+
 
 let ButtonGroup = React.createClass({
 

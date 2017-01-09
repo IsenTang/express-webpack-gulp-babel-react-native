@@ -5,3 +5,5 @@
 require('./style.css');
 require('./components/login.jsx');
 require('./components/counter.jsx');
+// require('./components/test.jsx');
+require('./components/newCounter.jsx');
