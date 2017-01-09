@@ -2,10 +2,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {incrementAction} from '../redux/action/action';
-import {connect} from 'react-redux';
-import {Provider} from 'react-redux';
+import {Provider,connect} from 'react-redux';
 import {store} from '../redux/store/counterStore';
-console.log(store)
+
+
 function mapStateToProps(state){
     return {
         value : state.count
@@ -18,7 +18,8 @@ function mapDispatchToProps(dispatch){
     }
 }
 
-class ButtonGroup extends React.component {
+
+class ButtonGroup extends React.Component {
     render (){
         const {value,onIncrement} = this.props
         return (
@@ -30,13 +31,15 @@ class ButtonGroup extends React.component {
     }
 }
 
-const app = connect(mapStateToProps,mapDispatchToProps)(ButtonGroup);
-let render = () => ReactDOM.render(
-    <Provider store="{store}">
-        <app/>
+
+const App = connect(mapStateToProps,mapDispatchToProps)(ButtonGroup);
+
+ReactDOM.render(
+    <Provider store={store}>
+        <App/>
     </Provider>,
     document.getElementById('newCounterDiv')
 )
 
-render();
+
 

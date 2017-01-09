@@ -1,6 +1,2 @@
 'use strict'
-export const incrementAction = () => {
-    {
-        type:'increment'
-    }
-}
+export const increaseAction = { type: 'increase' }
