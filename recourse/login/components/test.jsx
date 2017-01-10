@@ -54,7 +54,7 @@ const App = connect(
     mapStateToProps,
     mapDispatchToProps
 )(Counter)
-console.log(typeof (App));
+console.log(App);
 ReactDOM.render(
     <Provider store={store}>
         <App />
