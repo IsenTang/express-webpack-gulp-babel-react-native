@@ -57,3 +57,5 @@ colors
 /ui.lnf.xml
 /inspection/
 !/public/
+/github_settings.xml
+/vcs.xml
