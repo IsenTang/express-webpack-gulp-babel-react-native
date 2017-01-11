@@ -85,14 +85,20 @@ let buttonPStyle = {
 }
 
 let ForgetButton = React.createClass({
+    getDefaultProps : function () {
+        return {
+            value : 'Hello World'
+        };
+    },
     render:function(){
-    return(
-            <span style={{float:'left'}}>
-                <a style={{color:'rgb(204,204,204)'}} href="#">
-                    忘记密码
-                </a>
-            </span>
-    )
+        return(
+                <span style={{float:'left'}}>
+                    <a style={{color:'rgb(204,204,204)'}} href="#">
+                        忘记密码
+                    </a>
+                    <input value={this.props.value}/>
+                </span>
+        )
     }
 });
 
@@ -109,7 +115,7 @@ let ButtonDiv = React.createClass({
         return (
             <div style={buttonDivStyle}>
                 <p style={buttonPStyle}>
-                <ForgetButton/><LoginButton/>
+                <ForgetButton  /><LoginButton/>
                 </p>
             </div>
         )
