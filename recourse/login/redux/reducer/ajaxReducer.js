@@ -1,11 +1,10 @@
 'use strict'
 
-import fetch from 'isomorphic-fetch';
 
-export const reducer = (state = 0,action) =>{
+export const reducer = (state = { },action) =>{
     switch (action.type){
-        case 'ajax':
-            return action.info
+        case 'GET_RESULT':
+            return action.result
         default:
             return state
     }

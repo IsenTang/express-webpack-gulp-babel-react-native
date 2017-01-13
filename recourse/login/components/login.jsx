@@ -85,18 +85,13 @@ let buttonPStyle = {
 }
 
 let ForgetButton = React.createClass({
-    getDefaultProps : function () {
-        return {
-            value : 'Hello World'
-        };
-    },
+
     render:function(){
         return(
                 <span style={{float:'left'}}>
                     <a style={{color:'rgb(204,204,204)'}} href="#">
                         忘记密码
                     </a>
-                    <input value={this.props.value}/>
                 </span>
         )
     }
