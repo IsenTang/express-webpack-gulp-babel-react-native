@@ -2,7 +2,7 @@
 
 import fetch from 'isomorphic-fetch';
 
-    function receivePosts(data,json){
+    function receivePosts(json){
         return {
             type : 'GET_RESULT',
             data:data,
@@ -10,7 +10,9 @@ import fetch from 'isomorphic-fetch';
         }
     }
 
-    function fetchPost(data){
+    function fetchPost(){
+        console.log('..............');
+        let data = 'frontend';
         return function (dispatch) {
             return fetch(`http://www.subreddit.com/r/${data}.json`)
                 .then(response => response.json())
@@ -20,8 +22,8 @@ import fetch from 'isomorphic-fetch';
         }
     }
 
-    export function asyncIncrementAction (data){
+    export function asyncIncrementAction (){
         return (dispatch,getState) => {
-            return dispatch(fetchPost(data));
+            return dispatch(fetchPost());
         }
     }
