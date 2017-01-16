@@ -12,7 +12,7 @@ function mapStateToProps(state){
     }
 }
 
-function mapDispatchToState(dispatch){
+function mapDispatchToProps(dispatch){
     return {
         onAjax : () => dispatch(asyncIncrementAction)
     }
@@ -42,7 +42,7 @@ let AjaxButton = React.createClass({
 
 
 
-    let App = connect(mapStateToProps,mapDispatchToState)(AjaxButton);
+    let App = connect(mapStateToProps,mapDispatchToProps)(AjaxButton);
 
     ReactDOM.render(
         <Provider store={ store }>
