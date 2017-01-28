@@ -2,5 +2,6 @@
  * Created by 唐逸超 on 2016/12/15.
  */
 {
-    "presets": ["es2015"]
+    "presets": ["es2015"],
+    "plugins": ["transform-runtime","transform-async-to-generator"]
 }

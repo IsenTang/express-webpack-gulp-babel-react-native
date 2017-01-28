@@ -3,8 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { store } from '../redux/store/ajaxStore'
 import { Provider,connect } from 'react-redux';
-import { asyncIncrementAction } from '../redux/action/ajaxAction';
-
+import { fetchPosts } from '../redux/action/ajaxAction';
 
 function mapStateToProps(state){
     return {
@@ -14,7 +13,7 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch){
     return {
-        onAjax : () => dispatch(asyncIncrementAction)
+        onAjax : () => dispatch(fetchPosts())
     }
 }
 

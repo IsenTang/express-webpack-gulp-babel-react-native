@@ -5,35 +5,39 @@ var router = express.Router();
 var app = express();
 var db = require('../common/db.js');
 var mongoose = require('mongoose');
+mongoose.Promise = require('bluebird');
 //在实例化 mongoose的schema的时候，要实例化在全局上。
 var userSchema = new mongoose.Schema({
-  name: String,
-  password: String
+    name: String,
+    password: String
 });
 
 /* GET home page. */
 
 router.get('/login', function (req, res, next) {
 
-  var username = req.session.username;
-  var password = req.session.password;
-  if (username) {
-    console.log(username);
-  } else {
-    req.session.username = 'isen';
-  }
-  if (password) {
-    console.log(password);
-  } else {
-    req.session.password = '12345';
-  }
+    // let username = req.session.username;
+    // let password = req.session.password;
 
-  var userModel = db.model('user', userSchema);
-  var userEntity = new userModel({ name: 'Tom' });
-  userModel.find(function (err, users) {
-    console.log(users);
-  });
-  res.render('login/index', { title: '登陆' });
+    res.render('login/index', { title: '登陆' });
+});
+
+router.post('/main', function (req, res, next) {
+    var username = req.body.username;
+    var password = req.body.password;
+
+    var userModel = db.model('user', userSchema);
+    userModel.find({ name: username, password: password }, function (err, docs) {
+        if (docs.length == 0) {
+            res.redirect('/loginError');
+        } else {
+            res.render('main/index');
+        }
+    });
+});
+
+router.get('/loginError', function (req, res, next) {
+    res.render('err/loginErr');
 });
 
 module.exports = router;

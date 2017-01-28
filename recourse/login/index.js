@@ -4,6 +4,3 @@
 
 require('./style.css');
 require('./components/login.jsx');
-require('./components/counter.jsx');
-require('./components/ajaxComponent.jsx');
-require('./components/newCounter.jsx');

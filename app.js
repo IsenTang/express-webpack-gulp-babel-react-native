@@ -5,10 +5,15 @@ var debug = require('debug')('envproject:server');
 var favicon = require('serve-favicon');
 var session = require('express-session');
 var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
 
 let app = express();
 var port = normalizePort(process.env.PORT || '3000');
 
+//bodyParser 解析post的包体。
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 
 app.set('port', port);
 app.set('view engine', 'ejs');

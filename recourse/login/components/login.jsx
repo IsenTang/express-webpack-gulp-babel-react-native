@@ -1,6 +1,7 @@
 'use strict'
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider,connect } from 'react-redux'
 
 let totalDivStyle = {
     background:'rgb(255,255,255)',
@@ -28,7 +29,7 @@ let UsernameInputDiv = React.createClass({
         return (
             <p style={UsernameInputDivPStyle}>
                 <span className="u_logo"></span>
-                <input className="ipt" type="text" placeholder="请输入用户名或邮箱" value=""/>
+                <input className="ipt" type="text" name="username" placeholder="请输入用户名或邮箱" />
             </p>
         )
     }
@@ -39,7 +40,7 @@ let PasscodeInputDiv = React.createClass({
         return(
             <p style={{position:'relative'}}>
                 <span className="p_logo"></span>
-                <input className="ipt" id="password" type="password" placeholder="请输入密码" value=""/>
+                <input className="ipt" id="password" name='password' type="password" placeholder="请输入密码"/>
             </p>
         )
     }
@@ -70,7 +71,7 @@ let LoginButton = React.createClass({
         return(
             <span style={{float:'right'}}>
                 <RegisterButton/>
-                <a style={loginButtonStyle} href="#">登陆</a>
+                <button style={loginButtonStyle}  type="submit">登陆</button>
             </span>
         );
     }
@@ -121,6 +122,7 @@ let TotalDiv = React.createClass({
     render:function(){
         return(
             <div style={totalDivStyle}>
+                <form method="post" action="/main">
                 <div style={{width:'165px',height:'96px',position:'absolute'}}>
                     <div className="tou"></div>
                     <div className="initial_left_hand" id="left_hand"></div>
@@ -129,10 +131,14 @@ let TotalDiv = React.createClass({
                 <UsernameInputDiv/>
                 <PasscodeInputDiv/>
                 <ButtonDiv/>
+                </form>
             </div>
         )
     }
 })
+
+
+let App = connect()(TotalDiv);
 ReactDOM.render(
     <TotalDiv/>,
     document.getElementById('loginDiv')
